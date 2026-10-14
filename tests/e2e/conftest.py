@@ -65,6 +65,7 @@ def page(browser):
     # No cookies, local storage, or browser state is shared between tests.
     context = browser.new_context()
     page = context.new_page()
+    page.set_default_timeout(15000)
     try:
         yield page
     finally:
